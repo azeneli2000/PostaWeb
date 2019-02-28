@@ -1,0 +1,5 @@
+c:\Users\Andi\documents\visual studio 2015\Projects\AdexWeb\BusinessLayer\bin\Debug\BusinessLayer.dll
+c:\Users\Andi\documents\visual studio 2015\Projects\AdexWeb\BusinessLayer\bin\Debug\BusinessLayer.pdb
+c:\Users\Andi\documents\visual studio 2015\Projects\AdexWeb\BusinessLayer\obj\Debug\BusinessLayer.dll
+c:\Users\Andi\documents\visual studio 2015\Projects\AdexWeb\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Andi\documents\visual studio 2015\Projects\AdexWeb\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache

@@ -1,0 +1,193 @@
+﻿@model IEnumerable<BusinessLayer.Klienti>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Klientet</h2>
+
+<p>
+    @Html.ActionLink("Klient i Ri", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.emri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.perdoruesi)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.rePasssword)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.agjensi)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.aktiv)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.shenime)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.emerSubjekti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.personKontakti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.llogBankare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emerDispecheri)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.emerDispecheri)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.idMagazina)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.idDispecheri)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Detyrimi)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+      
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.emri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.perdoruesi)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.rePasssword)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.agjensi)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.aktiv)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.shenime)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.emerSubjekti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.personKontakti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.llogBankare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emerDispecheri)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.emerDispecheri)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.idMagazina)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.idDispecheri)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Detyrimi)
+            </td>
+            <td>
+                @Html.ActionLink("Modifiko", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Detaje", "Detaje", new { id = item.id }) |
+                <input type="submit" value="Fshi" class="btn btn-default btn-danger" onclick="dispecher('@item.id')" />
+            </td>
+        </tr>
+        
+    }
+
+</table>
+<style type="text/css">
+    .table > tbody > tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+<script>
+    function dispecher(idKlienti) {
+        //debugger;
+        $.ajax(
+        {
+            url: '@Url.Action("fshihet", "Klienti")',
+            type: 'GET',
+            data: {
+                id_klienti: idKlienti,
+
+            },
+            //contentType:'text/plain', //'application/json; charset=utf-8',
+
+            success: function (data) {
+                //alert(data);
+                if(data == 'true')
+                {
+                    ConfirmStatus = confirm("Jeni te sigurte...?");
+
+                    if (ConfirmStatus == true) {
+                        debugger;
+                        $.ajax(
+                               {
+                                   url: '@Url.Action("Fshi", "Klienti")',
+                                   type: 'GET',
+                                   data: {
+                                       id: idKlienti,
+
+                                   },
+
+                                   success: function (data) { }
+
+                               }
+                        )
+                        window.location.reload(true);
+                    }
+                    else
+                        alert("cancel");
+
+                }
+                else
+                {
+                    alert("Kjo Agjensi nuk mund te fshihet se i korrespondon nje Shoferi/Porosie/Skontoje")
+                }
+            },
+            error: function () {
+                alert("Ndodhi nje gabim ne fshirjen e Agjensise !");
+            }
+        }
+            )
+    }
+</script>
+
+
+
+

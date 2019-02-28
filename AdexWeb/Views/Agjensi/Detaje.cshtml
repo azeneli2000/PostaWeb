@@ -1,0 +1,127 @@
+﻿@model BusinessLayer.Klienti
+
+@{
+    ViewBag.Title = "Detaje";
+}
+
+<h2>Detaje </h2>
+
+<div>
+    <h4>Agjensia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.emri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.perdoruesi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.perdoruesi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+
+     
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aktiv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aktiv)
+        </dd>
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emerSubjekti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emerSubjekti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.personKontakti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.personKontakti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.llogBankare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.llogBankare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emerMagazina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emerMagazina)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emerDispecheri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emerDispecheri)
+        </dd>       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detyrimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detyrimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shenime)
+        </dt>
+
+        <dd>
+            @Html.DisplayWithBreaksFor(model => model.shenime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Kthehu te lista", "Index")
+</p>
